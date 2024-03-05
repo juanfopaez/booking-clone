@@ -1,6 +1,6 @@
 import { ChatBubbleLeftIcon, HomeIcon, PaperAirplaneIcon } from "@heroicons/react/20/solid";
 
-export const Products = [
+export const products = [
   {
     name: "Book a stay",
     description: "Get a better understanding of your traffic",

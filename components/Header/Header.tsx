@@ -2,19 +2,22 @@
 
 import { useState } from "react";
 
-import Image from "next/image";
-import Link from "next/link";
-import { StaysPopover } from "./StaysPopover";
-
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
+import { Dialog } from "@headlessui/react";
+import { DesktopLinks } from "./DesktopLinks";
+import { MobileMenu } from "./MobileMenu";
+import { MobileLinks } from "./MobileLinks";
+import { Logo } from "./Logo";
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleOpenMenu = () => {
-    setMobileMenuOpen((prevState) => !prevState);
+    setMobileMenuOpen(true);
   };
 
+  const handleCloseMenu = () => {
+    setMobileMenuOpen(false);
+  };
   return (
     <header className="bg-[#013B94]">
       <nav
@@ -22,35 +25,20 @@ function Header() {
          justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Booking.com</span>
-            <Image
-              className="h-6 w-auto"
-              src="/booking.svg"
-              width={1}
-              height={1}
-              alt="Booking Logo"
-            />
-          </Link>
+          <Logo className="h-5 w-auto" />
         </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-02.5 inline-flex items-center justify-center 
-            rounded-md p-2.5 text-white"
-            onClick={handleOpenMenu}
-          >
-            <span className="sr-only">Open main menu</span>
-            {mobileMenuOpen ? (
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-            ) : (
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            )}
-          </button>
-        </div>
-
-        <StaysPopover />
+        <DesktopLinks />
+        <MobileMenu handleOpenMenu={handleOpenMenu} />
       </nav>
+      <Dialog
+        as="div"
+        className="lg:hidden"
+        open={mobileMenuOpen}
+        onClose={handleCloseMenu}
+      >
+        <div className="fixed inset-0 z-10" />
+        <MobileLinks handleOnClose={handleCloseMenu} />
+      </Dialog>
     </header>
   );
 }

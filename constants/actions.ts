@@ -1,6 +1,6 @@
 import { PhoneIcon, PlayCircleIcon } from "@heroicons/react/20/solid";
 
-export const CallActions = [
+export const callActions = [
   {
     name: "See Demo Booking",
     href: "#",
