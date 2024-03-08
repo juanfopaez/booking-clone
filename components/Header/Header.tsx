@@ -8,7 +8,7 @@ import { MobileMenu } from "./MobileMenu";
 import { MobileLinks } from "./MobileLinks";
 import { Logo } from "./Logo";
 
-function Header() {
+const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleOpenMenu = () => {
@@ -41,5 +41,5 @@ function Header() {
       </Dialog>
     </header>
   );
-}
+};
 export default Header;
