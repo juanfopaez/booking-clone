@@ -63,56 +63,53 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               ) => (
                 <div
                   key={i}
-                  className="flex space-y-2 justify-between space-x-4 p-5 border rounded-lg"
+                  className="flex justify-between p-5 border rounded-lg gap-x-4"
                 >
                   <Image
                     src={src}
                     height={450}
                     width={450}
                     alt="image of property"
-                    className="h-16 w-16 lg:h-44 lg:w-44 rounded-lg"
+                    className="h-16 w-16 md:h-44 md:w-44 rounded-lg"
                   />
 
-                  <div className="flex flex-col lg:flex-row flex-1 space-y-3 lg:space-x-5 justify-between">
+                  <div className="flex flex-col md:flex-row flex-1 justify-between gap-x-2 gap-y-3">
                     <p
                       className="items-center justify-center font-bold text-sm w-8 
-                        h-8 lg:w-10 lg:h-10 text-white bg-blue-900 rounded-lg flex-shrink-0 flex lg:hidden absolute right-10 "
+                        h-8 text-white bg-blue-900 rounded-lg flex-shrink-0 flex md:hidden absolute right-10 -mt-0.5"
                     >
                       {rating || "N/A"}
                     </p>
-                    <div className="flex flex-col gap-y-2.5 max-w-sm">
+                    <div className="flex flex-col gap-y-2.5 max-w-[190px] md:max-w-sm">
                       <Link
                         href={link}
                         className="font-bold text-blue-500 hover:text-blue-600 hover:underline"
                       >
                         {title}
                       </Link>
-                      <p className="text-xs lg:max-w-lg">{description}</p>
+                      <p className="text-xs">{description}</p>
                     </div>
 
-                    <div className="flex flex-row-reverse lg:flex-col justify-between">
+                    <div className="flex flex-row-reverse md:flex-col justify-between">
                       <div className="flex items-start justify-end space-x-2 text-right">
                         <div>
-                          <p className="font-bold text-sm lg:text-md">
+                          <p className="font-bold text-sm md:text-md">
                             {rating_word}
                           </p>
                           <p className="text-xs">{rating_count} reviews</p>
                         </div>
 
-                        <p
-                          className="items-center justify-center font-bold text-sm w-8 
-                        h-8 lg:w-10 lg:h-10 text-white bg-blue-900 rounded-lg flex-shrink-0 hidden lg:flex"
-                        >
+                        <p className="items-center justify-center font-bold text-sm w-10 h-10 text-white bg-blue-900 rounded-lg flex-shrink-0 hidden md:flex">
                           {rating || "N/A"}
                         </p>
                       </div>
 
-                      <div className="lg:text-right">
+                      <div className="md:text-right">
                         <p className="text-xs ">
                           {searchParams.group_adults} adults,{" "}
                           {searchParams.group_children || 0} children
                         </p>
-                        <p className="lg:text-2xl font-bold">{price}</p>
+                        <p className="md:text-2xl font-bold">{price}</p>
                       </div>
                     </div>
                   </div>
