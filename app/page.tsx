@@ -1,5 +1,7 @@
+import { SearchForm } from "@/components/SearchForm";
 import { Card } from "@/components/Card";
 import { Main } from "@/components/Main";
+
 import { trendingData } from "@/constants";
 
 export default function Home() {
@@ -13,11 +15,11 @@ export default function Home() {
           Search low prices on hotels, homes and much more...
         </h3>
       </section>
-      <section className="m-4 mt-0 -mb-14 px-2 lg:px-4">
-        {/* Search Input */}
+      <section className="m-4 mt-0 px-2 lg:px-4 -mb-[88px] lg:-mb-[109px]">
+        <SearchForm />
       </section>
       <section className="mx-auto max-w-7xl mt-10 p-6 lg:px-8 bg-white rounded-t-lg">
-        <div className="pt-5">
+        <div className="pt-7">
           <h3 className="text-xl font-bold">Trending Destinations</h3>
           <p className="font-light">
             Most popular choices for travelers from around the world
