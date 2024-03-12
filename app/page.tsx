@@ -1,12 +1,12 @@
 import { SearchForm } from "@/components/SearchForm";
 import { Card } from "@/components/Card";
-import { Main } from "@/components/Main";
+import { Content } from "@/components/Content";
 
 import { trendingData } from "@/constants";
 
 export default function Home() {
   return (
-    <Main>
+    <Content className="bg-[#013B94]">
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 className="font-bold text-5xl text-white lg:pt-5">
           Find your next stay
@@ -31,6 +31,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-    </Main>
+    </Content>
   );
 }

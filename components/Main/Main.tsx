@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Header } from "../Header";
 
 interface MainProps {
   children: React.ReactNode;
@@ -6,7 +7,12 @@ interface MainProps {
 }
 
 const Main = ({ children, className }: MainProps) => {
-  return <main className={cn("bg-[#013B94]", className)}>{children}</main>;
+  return (
+    <main className={cn("min-h-svh flex flex-col", className)}>
+      <Header />
+      {children}
+    </main>
+  );
 };
 
 export default Main;
