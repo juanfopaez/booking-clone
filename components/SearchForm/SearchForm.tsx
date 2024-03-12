@@ -73,8 +73,8 @@ const SearchForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col lg:flex-row lg:max-w-6xl lg:mx-auto 
-        justify-center space-x-0 lg:space-x-2 space-y-2 lg:space-y-0 rounded-lg"
+        className="flex flex-col lg:flex-row lg:max-w-7xl lg:mx-auto 
+        justify-center space-x-0 lg:space-x-2 space-y-2 lg:space-y-0 rounded-lg lg:px-8"
       >
         <div className="grid w-full lg:max-w-sm">
           <FormField
